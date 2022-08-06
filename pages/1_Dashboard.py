@@ -1,10 +1,7 @@
 # Database:testdb, Table: trial_sheet, Table_names= "Underscored"
 import streamlit as st
 
-def dashboard(status):
-    if status:
-        return st.markdown(f'# Welcome *{st.session_state["username"]}*'), st.markdown("""---""")
-    else:
-        return st.warning("Please login first.")
+if st.session_state["authentication_status"]:
+     st.markdown(f'# Welcome *{st.session_state["username"]}*')
+     st.markdown("""---""")
 
-dashboard(st.session_state["authentication_status"])
