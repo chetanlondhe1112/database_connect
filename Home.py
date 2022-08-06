@@ -41,7 +41,7 @@ def main():
         names = [user["name"] for user in users]
         hashed_password = [user["password"] for user in users]
 
-        authenticator = stauth.Authenticate(names, username, hashed_password, "sfdb", "abcdef", cookie_expiry_days=30)
+        authenticator = stauth.Authenticate(names, username, hashed_password, "dbconn", "ghijkl", cookie_expiry_days=30)
 
         names, st.session_state['authentication_status'], username = authenticator.login("Login", "main")
 
