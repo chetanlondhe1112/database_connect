@@ -69,7 +69,7 @@ def main():
             else:
                 hashed_password = stauth.Hasher(password).generate()
                 # print(hashed_password[0])
-                db.insert_user(username,name,hashed_password[0])
+                db.insert_user(username,name,hashed_password)
                 st.success("Successfully created.")
                 st.balloons()
 
