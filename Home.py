@@ -43,8 +43,8 @@ def main():
 
         authenticator = stauth.Authenticate(names, username, hashed_password, "dbconn", "ghijkl", cookie_expiry_days=30)
 
-        names, st.session_state['authentication_status'], username = authenticator.login("Login", "main")
-
+        names,authentication_status, username = authenticator.login("Login", "main")
+        st.session_state["authentication_status"]=authentication_status
         if st.session_state["authentication_status"]:
             st.markdown(f'# Welcome *{st.session_state["username"]}*')
             authenticator.logout('Logout', 'sidebar')
